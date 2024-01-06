@@ -1,0 +1,155 @@
+
+body {
+    font-family:verdana;
+}
+
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    max-width:auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+li {
+    margin-right: 20px;
+}
+.header li {
+    margin-right: 20px;
+  }
+  
+li a, .drpbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdwn:hover .drpbtn {
+    background-color: grey;
+}
+
+li.dropdwn {
+    display: inline-block;
+}
+
+.dropdwn-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;   
+}
+
+.dropdwn-content a {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    
+}
+
+.dropdwn:hover .dropdwn-content {
+    display: block;
+    opacity: .8;
+}
+
+
+tr{
+    padding: 0px;
+    text-align: top;
+    background-color:#ffffff
+}
+
+img:hover {
+  opacity: .6;
+}
+
+table.center {
+    border: 1px solid black;
+    border-collapse: separate;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    font-variant: normal;
+    margin: 35px;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+td.center, th.center, tr.center {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Container holding the image and the text */
+.container {
+    position: relative;
+    opacity: 0.5;
+    background-color: black;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 200px;
+    right: 300px;
+    color: black;
+    padding-left: 100px;
+    padding-right: 230px;
+  }
+
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size : 55px;
+    font-family: Helvetica;
+    color: rgb(6, 6, 6);
+    /* background-color: rgb(210, 205, 205); */
+    white-space: nowrap;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td {
+    width: 50%;
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  .image-caption {
+	float:left;
+	margin:0;
+    padding: 10px;
+	text-align:left;
+}
+
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s ease-in-out;
+    z-index: 9999;
+}
