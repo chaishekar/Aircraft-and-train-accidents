@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14, "titlePadding": 15}, "title": {"anchor": "middle", "fontSize": 18, "subtitleFontWeight": "normal"}}, "data": {"name": "data-ce53a483219d4f89d503a79b8389993d"}, "mark": "bar", "encoding": {"color": {"field": "region", "legend": {"title": "Region"}, "scale": {"range": ["#3C6255", "#61876E", "#A6BB8D", "#EAE7B1"]}, "type": "nominal"}, "order": {"field": "region", "sort": "ascending", "type": "nominal"}, "tooltip": [{"field": "count", "title": "Number of Accidents", "type": "quantitative"}], "x": {"axis": {"title": "Decade"}, "field": "decade", "type": "ordinal"}, "y": {"axis": {"title": "Number of Accidents"}, "field": "count", "type": "quantitative"}}, "height": 500, "title": {"text": "Train Accidents in the US", "subtitle": "Source: Federal Railroad Admistration"}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ce53a483219d4f89d503a79b8389993d": [{"decade": 1970, "region": "Midwest", "count": 24681}, {"decade": 1970, "region": "Northeast", "count": 7175}, {"decade": 1970, "region": "South", "count": 21087}, {"decade": 1970, "region": "West", "count": 7851}, {"decade": 1980, "region": "Midwest", "count": 20540}, {"decade": 1980, "region": "Northeast", "count": 5632}, {"decade": 1980, "region": "South", "count": 17652}, {"decade": 1980, "region": "West", "count": 7899}, {"decade": 1990, "region": "Midwest", "count": 12539}, {"decade": 1990, "region": "Northeast", "count": 3271}, {"decade": 1990, "region": "South", "count": 11068}, {"decade": 1990, "region": "West", "count": 6328}, {"decade": 2000, "region": "Midwest", "count": 12170}, {"decade": 2000, "region": "Northeast", "count": 4226}, {"decade": 2000, "region": "South", "count": 14265}, {"decade": 2000, "region": "West", "count": 7385}, {"decade": 2010, "region": "Midwest", "count": 8709}, {"decade": 2010, "region": "Northeast", "count": 2756}, {"decade": 2010, "region": "South", "count": 9782}, {"decade": 2010, "region": "West", "count": 4487}, {"decade": 2020, "region": "Midwest", "count": 2239}, {"decade": 2020, "region": "Northeast", "count": 760}, {"decade": 2020, "region": "South", "count": 2853}, {"decade": 2020, "region": "West", "count": 1215}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

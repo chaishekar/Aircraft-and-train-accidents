@@ -1,0 +1,116 @@
+/*-- scss:defaults --*/
+$font-family: verdana;
+$primary-color: grey;
+$secondary-color: rgb(246, 244, 244);
+$margin-horizontal: 100px;
+// Set the desired height of the navbar
+$navbar-height: 10px;
+
+// Nav Bar
+$navbar-bg: black;
+$navbar-color: white; // Change the text color to white
+$navbar-link-color: white; // Change the link text color to white
+$navbar-link-hover-color: white; // Change the link hover text color to white
+$navbar-link-hover-bg: black;
+
+/*-- scss:rules --*/
+body {
+    font-family: $font-family;
+    background-color: $secondary-color;
+    margin: 20px;
+    padding: 120px;
+}
+
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $navbar-bg; /* Change the background color to black */
+    max-width: auto;
+    height: $navbar-height;
+
+    li {
+        float: left;
+
+        a, .dropbtn {
+            display: inline-block;
+            color: $navbar-color; /* Change the text color to white */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        a:hover, .dropdown:hover .dropbtn {
+            background-color: $secondary-color;
+        }
+    }
+
+    .dropdown {
+        display: inline-block;
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+
+            a {
+                color: black;
+                padding: 14px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            &:hover {
+                display: block;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+tr {
+    padding: 0px;
+    text-align: top;
+    background-color: #ffffff;
+}
+
+img:hover {
+    opacity: 0.6;
+}
+
+table.center {
+    border: 1px solid black;
+    border-collapse: separate;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: inherit;
+    text-align: start;
+    border-spacing: 2px;
+    font-variant: normal;
+    margin: 35px;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+td.center, th.center, tr.center {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5{
+    text-align: center; /* Center-align text */
+    margin: 10px; /* Add margin to headings and paragraphs */
+  }

@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: ../docs
+
+
+website:
+  search: false
+  page-navigation: true
+  page-footer:
+    border: false
+    background: transparent
+    foreground: DimGray
+    #left: Left content
+    #right: Right content
+  navbar:
+    background: transparent
+    pinned: true
+    left:
+      - file: index.html
+        text: Home
+      - text: Introduction
+        href: "index.qmd#intro"
+      - text: "Data"
+        href: "index.qmd#data"
+      - text: Analysis
+        href: "index.qmd#analysis"
+      - text: Conclusion
+        href: "index.qmd#conc"
+      - text: "Code"
+        href: "https://github.com/anly503/spring2023-project-team-15/tree/main/code"
+      - text: "References"
+        href: "index.qmd#references"
+        
+
+format:
+  html:
+    theme: 
+      - styles1.scss
+    toc: false
+
+editor: visual
+

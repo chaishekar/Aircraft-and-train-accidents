@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14, "titlePadding": 15}, "title": {"anchor": "middle", "fontSize": 18, "subtitleFontWeight": "normal"}}, "data": {"name": "data-1a2c9acfdf1b387bb4ced236f7badaed"}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "region", "legend": {"title": "Region"}, "scale": {"domain": ["Midwest", "Northeast", "South", "West"], "range": ["#57C5B6", "#159895", "#1A5F7A", "#002B5B"]}}, "order": {"type": "nominal", "field": "region", "sort": "ascending"}, "tooltip": [{"type": "quantitative", "field": "count", "title": "Number of Accidents"}], "x": {"type": "ordinal", "axis": {"title": "Decade"}, "field": "decade"}, "y": {"type": "quantitative", "axis": {"title": "Number of Accidents"}, "field": "count"}}, "height": 500, "title": {"text": "Aircraft Accidents in the US", "subtitle": "Source: Kaggle"}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-1a2c9acfdf1b387bb4ced236f7badaed": [{"decade": 1900, "region": "South", "count": 1}, {"decade": 1910, "region": "Midwest", "count": 1}, {"decade": 1910, "region": "Northeast", "count": 4}, {"decade": 1910, "region": "South", "count": 1}, {"decade": 1920, "region": "Midwest", "count": 27}, {"decade": 1920, "region": "Northeast", "count": 16}, {"decade": 1920, "region": "South", "count": 6}, {"decade": 1920, "region": "West", "count": 18}, {"decade": 1930, "region": "Midwest", "count": 27}, {"decade": 1930, "region": "Northeast", "count": 15}, {"decade": 1930, "region": "South", "count": 17}, {"decade": 1930, "region": "West", "count": 43}, {"decade": 1940, "region": "Midwest", "count": 15}, {"decade": 1940, "region": "Northeast", "count": 13}, {"decade": 1940, "region": "South", "count": 37}, {"decade": 1940, "region": "West", "count": 42}, {"decade": 1950, "region": "Midwest", "count": 13}, {"decade": 1950, "region": "Northeast", "count": 22}, {"decade": 1950, "region": "South", "count": 32}, {"decade": 1950, "region": "West", "count": 59}, {"decade": 1960, "region": "Midwest", "count": 35}, {"decade": 1960, "region": "Northeast", "count": 35}, {"decade": 1960, "region": "South", "count": 45}, {"decade": 1960, "region": "West", "count": 97}, {"decade": 1970, "region": "Midwest", "count": 43}, {"decade": 1970, "region": "Northeast", "count": 32}, {"decade": 1970, "region": "South", "count": 49}, {"decade": 1970, "region": "West", "count": 136}, {"decade": 1980, "region": "Midwest", "count": 27}, {"decade": 1980, "region": "Northeast", "count": 26}, {"decade": 1980, "region": "South", "count": 57}, {"decade": 1980, "region": "West", "count": 87}, {"decade": 1990, "region": "Midwest", "count": 22}, {"decade": 1990, "region": "Northeast", "count": 18}, {"decade": 1990, "region": "South", "count": 44}, {"decade": 1990, "region": "West", "count": 77}, {"decade": 2000, "region": "Midwest", "count": 19}, {"decade": 2000, "region": "Northeast", "count": 18}, {"decade": 2000, "region": "South", "count": 26}, {"decade": 2000, "region": "West", "count": 61}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
