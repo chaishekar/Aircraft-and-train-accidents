@@ -16,7 +16,7 @@ website:
     background: transparent
     pinned: true
     left:
-      - file: index.html
+      - file: "https://chaishekar.github.io/Portfolio/"
         text: Home
       - text: Introduction
         href: "index.qmd#intro"
